@@ -1,26 +1,103 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+/* O app é dark-only: a classe .dark fica fixa no <html>. */
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --radius: 0.625rem;
+
+  /* Superfícies (preto quente, puxado pro marrom) */
+  --background: #141110;
+  --foreground: #f2ece8;
+  --card: #1b1715;
+  --card-foreground: #f2ece8;
+  --popover: #1b1715;
+  --popover-foreground: #f2ece8;
+
+  /* Accent terracota. Validado (contraste >= 3:1) contra --background e --card */
+  --primary: #d9714a;
+  --primary-foreground: #1a0e09;
+
+  --secondary: #241f1c;
+  --secondary-foreground: #f2ece8;
+  --muted: #241f1c;
+  --muted-foreground: #a39a94;
+  /* "accent" no vocabulário do shadcn = fundo de hover/ativo, não a cor da marca */
+  --accent: #2a211d;
+  --accent-foreground: #f2ece8;
+
+  --destructive: #e5484d;
+  --success: #4cc38a;
+  --warning: #e8b04b;
+
+  --border: #2e2724;
+  --input: #2e2724;
+  --ring: #d9714a;
+
+  --sidebar: #100d0c;
+  --sidebar-foreground: #d9d1cc;
+  --sidebar-primary: #d9714a;
+  --sidebar-primary-foreground: #1a0e09;
+  --sidebar-accent: #221b18;
+  --sidebar-accent-foreground: #f2ece8;
+  --sidebar-border: #241e1b;
+  --sidebar-ring: #d9714a;
+
+  /* Gráficos: série única usa a terracota; grid/eixos recessivos */
+  --chart-1: #d9714a;
+  --chart-grid: #2a2421;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-grid: var(--chart-grid);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
