@@ -12,7 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { siteConfig } from "@/config/site";
+import { profileLabel } from "@/config/site";
 
 export function MobileHeader() {
   const [open, setOpen] = useState(false);
@@ -31,7 +31,7 @@ export function MobileHeader() {
           <SidebarContent onNavigate={() => setOpen(false)} />
         </SheetContent>
       </Sheet>
-      <span className="text-sm font-semibold">{siteConfig.handle}</span>
+      <span className="text-sm font-semibold">{profileLabel}</span>
     </header>
   );
 }

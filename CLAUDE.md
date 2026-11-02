@@ -40,7 +40,7 @@ src/
     overview/               # blocos da Overview (KPIs, gráfico, listas)
     platform-badge.tsx      # sigla da plataforma (IG, TikTok, YT...)
   config/
-    site.ts                 # @ e nome do cliente exibidos na sidebar
+    site.ts                 # @ e nome do cliente (vazios por enquanto)
     nav.ts                  # as 6 páginas: título, rota, ícone, descrição
   data/mock/                # dados fictícios, um arquivo por domínio
   lib/
@@ -66,7 +66,7 @@ src/
 
 ## Pendências conhecidas
 
-- `@seuperfil` e "Nome do Cliente" em `src/config/site.ts` são placeholders.
+- O @ e o nome do cliente ainda não foram definidos. Em `src/config/site.ts` eles ficam vazios e a UI mostra "Content OS" no lugar. Ao preencher `handle`, ele aparece na sidebar, no header mobile e no subtítulo da Overview.
 - As 6 páginas exibem `ComingSoon`. A ordem combinada é construir uma por vez, a partir da Overview aprovada.
 - Mocks de concorrentes e calendário ainda não existem.
 - Manchetes e criadores dos mocks são fictícios (`Fonte A`, `@criador.exemplo1`).

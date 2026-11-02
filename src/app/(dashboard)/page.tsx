@@ -42,7 +42,7 @@ export default async function OverviewPage() {
     <div className="space-y-6">
       <PageHeader
         title="Overview"
-        description={`Semana de ${siteConfig.handle} até ${formatDay(today, { day: "2-digit", month: "long" })}`}
+        description={`${siteConfig.handle ? `Semana de ${siteConfig.handle}` : "Últimos 7 dias"} até ${formatDay(today, { day: "2-digit", month: "long" })}`}
       />
 
       <section aria-label="Indicadores da semana" className="grid grid-cols-2 gap-4 xl:grid-cols-4">
