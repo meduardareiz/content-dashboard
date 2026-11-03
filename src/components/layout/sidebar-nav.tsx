@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { mainNav, overviewNav, type NavItem } from "@/config/nav";
+import { mainNav, overviewNav, toolsNav, type NavItem } from "@/config/nav";
 import { cn } from "@/lib/utils";
 
 function isActive(pathname: string, href: string) {
@@ -51,6 +51,12 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
         Conteúdo
       </p>
       {mainNav.map((item) => (
+        <NavLink key={item.href} item={item} onNavigate={onNavigate} />
+      ))}
+      <p className="mt-5 mb-1 px-3 text-[11px] font-medium tracking-wider text-muted-foreground uppercase">
+        Ferramentas
+      </p>
+      {toolsNav.map((item) => (
         <NavLink key={item.href} item={item} onNavigate={onNavigate} />
       ))}
     </nav>

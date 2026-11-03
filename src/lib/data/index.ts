@@ -69,6 +69,15 @@ export async function getHookVaultCount() {
   return savedHooks.length;
 }
 
+/** Todos os hooks do Vault, mais recentes primeiro. Filtro e busca rodam no cliente. */
+export async function getAllHooks() {
+  return [...savedHooks].sort((a, b) => b.savedAt.localeCompare(a.savedAt));
+}
+
+export async function getHookById(id: string) {
+  return savedHooks.find((h) => h.id === id) ?? null;
+}
+
 export async function getUpcomingPosts(limit = 4) {
   return [...scheduledPosts]
     .sort((a, b) => a.scheduledFor.localeCompare(b.scheduledFor))

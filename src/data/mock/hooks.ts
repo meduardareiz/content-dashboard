@@ -1,34 +1,33 @@
 import type { SavedHook } from "@/lib/types";
 
+/**
+ * Hooks salvos no Vault. Criadores são fictícios (@*.exemplo não existe de
+ * propósito); textos e números imitam o padrão de reels virais em PT-BR.
+ * Convenção de variáveis: [MAIÚSCULAS_SEM_ACENTO].
+ */
 export const savedHooks: SavedHook[] = [
-  {
-    id: "h1",
-    text: "Eu perdi 40 mil seguidores por causa de um único post. Deixa eu te mostrar qual.",
-    template: "Eu perdi [número] [métrica] por causa de [um único erro]. Deixa eu te mostrar qual.",
-    creator: "@criador.exemplo1",
-    platform: "instagram",
-    views: 1840000,
-    savedAt: "2026-11-01",
-    tags: ["confissão", "curiosidade"],
-  },
-  {
-    id: "h2",
-    text: "Se você usa IA só pra escrever e-mail, você está usando 5% dela.",
-    template: "Se você usa [ferramenta] só pra [uso básico], você está usando [x]% dela.",
-    creator: "@criador.exemplo2",
-    platform: "tiktok",
-    views: 920000,
-    savedAt: "2026-10-31",
-    tags: ["provocação", "IA"],
-  },
-  {
-    id: "h3",
-    text: "Esse é o print mais caro que eu já tirei.",
-    template: "Esse é o [objeto] mais [adjetivo] que eu já [ação].",
-    creator: "@criador.exemplo3",
-    platform: "instagram",
-    views: 640000,
-    savedAt: "2026-10-30",
-    tags: ["curiosidade"],
-  },
+  { id: "h01", text: "O Gemini acabou de matar o Canva.", template: "[X] acabou de matar [Y].", type: "noticia", niche: "IA", creator: "@lucas.ia.exemplo", platform: "instagram", views: 3_400_000, savedAt: "2026-11-02" },
+  { id: "h02", text: "Para de fazer post carrossel do jeito que te ensinaram.", template: "Para de fazer [FORMATO] do jeito que te ensinaram.", type: "proibicao", niche: "Marketing", creator: "@bia.conteudo.exemplo", platform: "instagram", views: 1_250_000, savedAt: "2026-11-02" },
+  { id: "h03", text: "7 coisas que eu queria saber antes de abrir CNPJ.", template: "[NUMERO] coisas que eu queria saber antes de [DECISAO].", type: "lista", niche: "Negócios", creator: "@rafa.empreende.exemplo", platform: "tiktok", views: 2_100_000, savedAt: "2026-11-01" },
+  { id: "h04", text: "Eu perdi 40 mil seguidores por causa de um único post.", template: "Eu perdi [NUMERO] [METRICA] por causa de [ERRO].", type: "confissao", niche: "Marketing", creator: "@nina.social.exemplo", platform: "instagram", views: 1_840_000, savedAt: "2026-11-01" },
+  { id: "h05", text: "Se você usa IA só pra escrever e-mail, você está usando 5% dela.", template: "Se você usa [FERRAMENTA] só pra [USO_BASICO], você está usando [PORCENTAGEM] dela.", type: "contraintuitivo", niche: "IA", creator: "@dev.pragmatico.exemplo", platform: "tiktok", views: 920_000, savedAt: "2026-10-31" },
+  { id: "h06", text: "Ninguém fala sobre o imposto que come metade do seu lucro como MEI.", template: "Ninguém fala sobre [PROBLEMA_ESCONDIDO] que [CONSEQUENCIA].", type: "curiosidade", niche: "Finanças", creator: "@contadora.real.exemplo", platform: "instagram", views: 4_700_000, savedAt: "2026-10-31" },
+  { id: "h07", text: "Como eu organizo minha semana inteira em 15 minutos no domingo.", template: "Como eu [RESULTADO] em [PRAZO_CURTO].", type: "tutorial", niche: "Produtividade", creator: "@agenda.zen.exemplo", platform: "youtube", views: 640_000, savedAt: "2026-10-30" },
+  { id: "h08", text: "ChatGPT vs. Claude pra escrever roteiro: testei os dois por 30 dias.", template: "[A] vs. [B] pra [TAREFA]: testei os dois por [PRAZO].", type: "comparacao", niche: "IA", creator: "@lucas.ia.exemplo", platform: "youtube", views: 1_100_000, savedAt: "2026-10-30" },
+  { id: "h09", text: "A OpenAI acabou de matar metade das startups de IA.", template: "[EMPRESA] acabou de matar [ALVO].", type: "noticia", niche: "IA", creator: "@tech.semanal.exemplo", platform: "tiktok", views: 5_900_000, savedAt: "2026-10-29" },
+  { id: "h10", text: "Para de guardar dinheiro na poupança. Sério.", template: "Para de [HABITO_COMUM]. Sério.", type: "proibicao", niche: "Finanças", creator: "@grana.simples.exemplo", platform: "instagram", views: 2_800_000, savedAt: "2026-10-29" },
+  { id: "h11", text: "5 coisas que eu queria saber no meu primeiro emprego em tech.", template: "[NUMERO] coisas que eu queria saber no meu primeiro [CONTEXTO].", type: "lista", niche: "Carreira", creator: "@carreira.dev.exemplo", platform: "linkedin", views: 310_000, savedAt: "2026-10-28" },
+  { id: "h12", text: "Fui demitido por usar IA no trabalho. Deixa eu te contar o que aconteceu.", template: "Fui [CONSEQUENCIA] por [ACAO]. Deixa eu te contar o que aconteceu.", type: "confissao", niche: "Carreira", creator: "@vida.corporativa.exemplo", platform: "tiktok", views: 6_300_000, savedAt: "2026-10-28" },
+  { id: "h13", text: "Treinar todo dia está te deixando mais fraco.", template: "[HABITO_POSITIVO] está te deixando [RESULTADO_RUIM].", type: "contraintuitivo", niche: "Fitness", creator: "@coach.ciencia.exemplo", platform: "instagram", views: 3_100_000, savedAt: "2026-10-27" },
+  { id: "h14", text: "Esse é o print mais caro que eu já tirei.", template: "Esse é o [OBJETO] mais [ADJETIVO] que eu já [ACAO].", type: "curiosidade", niche: "Negócios", creator: "@rafa.empreende.exemplo", platform: "instagram", views: 640_000, savedAt: "2026-10-27" },
+  { id: "h15", text: "Como montar um agente que responde seu direct em 10 minutos, sem código.", template: "Como montar [SOLUCAO] em [PRAZO_CURTO], sem [BARREIRA].", type: "tutorial", niche: "IA", creator: "@dev.pragmatico.exemplo", platform: "instagram", views: 870_000, savedAt: "2026-10-26" },
+  { id: "h16", text: "CLT vs. PJ ganhando 10 mil: fiz a conta que ninguém faz.", template: "[A] vs. [B] ganhando [VALOR]: fiz a conta que ninguém faz.", type: "comparacao", niche: "Finanças", creator: "@contadora.real.exemplo", platform: "tiktok", views: 2_400_000, savedAt: "2026-10-26" },
+  { id: "h17", text: "O Reels acabou de mudar o algoritmo e quase ninguém percebeu.", template: "[PLATAFORMA] acabou de mudar [COISA] e quase ninguém percebeu.", type: "noticia", niche: "Marketing", creator: "@bia.conteudo.exemplo", platform: "instagram", views: 1_600_000, savedAt: "2026-10-25" },
+  { id: "h18", text: "Para de responder e-mail de manhã.", template: "Para de [ACAO_ROTINEIRA] de manhã.", type: "proibicao", niche: "Produtividade", creator: "@agenda.zen.exemplo", platform: "instagram", views: 450_000, savedAt: "2026-10-24" },
+  { id: "h19", text: "3 prompts que valem mais que qualquer curso de IA.", template: "[NUMERO] [ITENS] que valem mais que qualquer [ALTERNATIVA_CARA].", type: "lista", niche: "IA", creator: "@lucas.ia.exemplo", platform: "instagram", views: 1_950_000, savedAt: "2026-10-23" },
+  { id: "h20", text: "Eu cobrava R$ 300 por um site. Hoje cobro R$ 8 mil pelo mesmo trabalho.", template: "Eu cobrava [VALOR_ANTIGO] por [SERVICO]. Hoje cobro [VALOR_NOVO] pelo mesmo trabalho.", type: "confissao", niche: "Negócios", creator: "@freela.pro.exemplo", platform: "tiktok", views: 3_700_000, savedAt: "2026-10-22" },
+  { id: "h21", text: "Postar todo dia está matando seu perfil.", template: "[CONSELHO_POPULAR] está matando [ALVO].", type: "contraintuitivo", niche: "Marketing", creator: "@nina.social.exemplo", platform: "instagram", views: 780_000, savedAt: "2026-10-21" },
+  { id: "h22", text: "O que acontece com seu corpo depois de 30 dias sem açúcar.", template: "O que acontece com [ALVO] depois de [PRAZO] sem [HABITO].", type: "curiosidade", niche: "Fitness", creator: "@coach.ciencia.exemplo", platform: "youtube", views: 8_200_000, savedAt: "2026-10-20" },
+  { id: "h23", text: "Como eu passei de 0 a 10 mil seguidores no LinkedIn em 90 dias.", template: "Como eu passei de [INICIO] a [RESULTADO] em [PRAZO].", type: "tutorial", niche: "Carreira", creator: "@carreira.dev.exemplo", platform: "linkedin", views: 190_000, savedAt: "2026-10-18" },
+  { id: "h24", text: "Notion vs. Obsidian: qual eu usaria se começasse hoje.", template: "[A] vs. [B]: qual eu usaria se começasse hoje.", type: "comparacao", niche: "Produtividade", creator: "@agenda.zen.exemplo", platform: "youtube", views: 95_000, savedAt: "2026-10-16" },
 ];

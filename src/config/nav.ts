@@ -2,6 +2,7 @@ import {
   CalendarDays,
   ChartColumn,
   Flame,
+  FilePen,
   FishingHook,
   LayoutDashboard,
   Send,
@@ -60,5 +61,15 @@ export const mainNav: NavItem[] = [
     href: "/em-alta",
     icon: Flame,
     description: "Notícias de IA de 12 fontes, com score de potencial de hook",
+  },
+];
+
+/** Ferramentas fora das 6 páginas principais. */
+export const toolsNav: NavItem[] = [
+  {
+    title: "Script",
+    href: "/script",
+    icon: FilePen,
+    description: "Rascunhos de roteiro a partir dos hooks",
   },
 ];

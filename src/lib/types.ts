@@ -19,17 +19,38 @@ export type Reel = {
   isHeater: boolean;
 };
 
+export type HookType =
+  | "noticia"
+  | "proibicao"
+  | "lista"
+  | "confissao"
+  | "curiosidade"
+  | "contraintuitivo"
+  | "tutorial"
+  | "comparacao";
+
+export type Niche =
+  | "IA"
+  | "Marketing"
+  | "Finanças"
+  | "Produtividade"
+  | "Negócios"
+  | "Carreira"
+  | "Fitness";
+
 export type SavedHook = {
   id: string;
   /** Transcrição literal do hook */
   text: string;
-  /** Versão templatizada, com [variáveis] entre colchetes */
+  /** Versão templatizada, com [VARIÁVEIS] entre colchetes */
   template: string;
+  type: HookType;
+  niche: Niche;
   creator: string;
   platform: Platform;
   views: number;
+  /** ISO date (YYYY-MM-DD) */
   savedAt: string;
-  tags: string[];
 };
 
 export type ScheduledPost = {
